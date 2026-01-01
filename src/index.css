@@ -1,0 +1,504 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Existing Palette */
+    --clinical-dark: 200 15% 8%;
+    --clinical-light: 180 8% 92%;
+    --clinical-accent: 174 65% 65%;
+    --clinical-mid: 180 4% 50%;
+
+    /* New Premium Palette */
+    --tech-grid: 255 255 255;
+
+    /* Clinical System Palette - Cinematic Adaptation */
+    --clinical-deep: 160 25% 6%;
+    --clinical-surface: 35 15% 90%;
+    --clinical-accent-bright: 160 60% 60%;
+    --clinical-warm: 35 25% 92%;
+    --clinical-coral: 8 70% 60%;
+    --clinical-blue: 200 60% 50%;
+
+    /* Semantic Defaults */
+    --background: 200 15% 8%;
+    /* Dark by default */
+    --foreground: 0 0% 100%;
+    /* White by default */
+
+    --card: 200 15% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 200 15% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 160 45% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 15% 12%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 200 15% 12%;
+    --muted-foreground: 200 10% 60%;
+
+    --accent: 160 50% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 8 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 15% 18%;
+    --input: 200 15% 18%;
+    --ring: 160 45% 45%;
+
+    --radius: 0.5rem;
+
+    /* Shadows */
+    --shadow-clinical: 0 4px 24px -4px rgba(0, 0, 0, 0.5);
+    --shadow-deep: 0 8px 40px -8px rgba(0, 0, 0, 0.8);
+    --shadow-glow: 0 0 40px rgba(16, 185, 129, 0.25);
+    --shadow-glow-strong: 0 0 60px rgba(16, 185, 129, 0.4);
+  }
+
+  /* Force Dark Theme */
+  html,
+  body {
+    @apply bg-[#080a0a] text-white;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+/* Premium Typography Utilities */
+.font-instrument {
+  font-family: 'Instrument Serif', serif;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Engineer Grid - Safe Class */
+.bg-grid-engineer {
+  background-size: 50px 50px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+@layer components {
+
+  /* Container System */
+  .container-clinical {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-full {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section Rhythm - PADRONIZADO */
+  .section-massive {
+    @apply min-h-screen py-0;
+  }
+
+  .section-deep {
+    @apply py-20 sm:py-24 md:py-28 lg:py-32;
+  }
+
+  .section-standard {
+    @apply py-16 sm:py-20 md:py-24 lg:py-28;
+  }
+
+  .section-tight {
+    @apply py-12 sm:py-14 md:py-16 lg:py-18;
+  }
+
+  /* Transição suave entre seções */
+  .section-transition {
+    position: relative;
+  }
+
+  .section-transition::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(180deg, hsl(var(--background) / 0.3) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .section-transition::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(180deg, transparent 0%, hsl(var(--background) / 0.3) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Transição suave de seção clara para escura */
+  .section-transition-to-dark::after {
+    background: linear-gradient(180deg, transparent 0%, hsl(200 15% 8% / 0.5) 100%);
+  }
+
+  /* Transição suave de seção escura para clara */
+  .section-transition-to-light::after {
+    background: linear-gradient(180deg, transparent 0%, hsl(180 8% 92% / 0.5) 100%);
+  }
+
+  /* Clinical Glass */
+  .glass-clinical {
+    background: linear-gradient(135deg, hsl(0 0% 100% / 0.9) 0%, hsl(180 8% 98% / 0.85) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.6);
+    box-shadow: var(--shadow-clinical), inset 0 1px 0 hsl(0 0% 100% / 0.5);
+  }
+
+  .glass-dark {
+    background: linear-gradient(135deg, hsl(200 15% 10% / 0.95) 0%, hsl(200 12% 14% / 0.9) 100%);
+    backdrop-filter: blur(24px) saturate(150%);
+    border: 1px solid hsl(0 0% 100% / 0.08);
+  }
+
+  /* Clinical Card */
+  .card-clinical {
+    @apply bg-card rounded-lg relative overflow-hidden;
+    border: 1px solid hsl(var(--border) / 0.5);
+    box-shadow: var(--shadow-clinical);
+  }
+
+  .card-clinical::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent);
+  }
+
+  /* Clinical Module */
+  .module-clinical {
+    @apply relative p-6 md:p-8 rounded-lg;
+    background: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--muted) / 0.3) 100%);
+    border: 1px solid hsl(var(--border) / 0.4);
+    box-shadow: var(--shadow-clinical);
+  }
+
+  .module-clinical::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 24px;
+    right: 24px;
+    height: 2px;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary) / 0.3));
+    border-radius: 0 0 2px 2px;
+  }
+
+  /* Active Line Indicators */
+  .line-active {
+    position: relative;
+  }
+
+  .line-active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--primary) / 0.2));
+    border-radius: 0 2px 2px 0;
+  }
+
+  /* Grid Lines Background - REDUZIDO EM MOBILE */
+  .grid-clinical {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Scan Line Effect - DESABILITADO EM MOBILE */
+  .scan-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.5), transparent);
+    animation: scanLine 4s ease-in-out infinite;
+  }
+
+  @media (max-width: 768px) {
+    .scan-line {
+      display: none;
+    }
+  }
+
+  @keyframes scanLine {
+
+    0%,
+    100% {
+      top: 0;
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 1;
+    }
+
+    90% {
+      opacity: 1;
+    }
+
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+
+  /* Pulse Ring - SIMPLIFICADO EM MOBILE */
+  .pulse-ring {
+    position: relative;
+  }
+
+  .pulse-ring::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border: 2px solid hsl(var(--primary) / 0.4);
+    border-radius: inherit;
+    animation: pulseRing 4s ease-out infinite;
+  }
+
+  @media (max-width: 768px) {
+    .pulse-ring::after {
+      animation: none;
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes pulseRing {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(1.15);
+      opacity: 0;
+    }
+  }
+
+  /* Status Indicator */
+  .status-active {
+    @apply inline-flex items-center gap-2;
+  }
+
+  .status-active::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: hsl(var(--primary));
+    box-shadow: 0 0 12px hsl(var(--primary) / 0.6);
+    animation: statusPulse 4s ease-in-out infinite;
+  }
+
+  @media (max-width: 768px) {
+    .status-active::before {
+      animation: none;
+    }
+  }
+
+  @keyframes statusPulse {
+
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.6;
+      transform: scale(0.9);
+    }
+  }
+
+  /* Clinical Button */
+  .btn-clinical {
+    @apply relative inline-flex items-center justify-center gap-3 px-8 py-4 font-semibold text-base rounded-lg overflow-hidden;
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(160 50% 35%) 100%);
+    color: white;
+    box-shadow: var(--shadow-clinical), 0 0 0 1px hsl(var(--primary) / 0.2);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-clinical::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, hsl(0 0% 100% / 0.15) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .btn-clinical:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-deep), var(--shadow-glow);
+  }
+
+  .btn-clinical:hover::before {
+    opacity: 1;
+  }
+
+  .btn-clinical:active {
+    transform: translateY(0);
+  }
+
+  /* Floating Orbs - Clinical - REDUZIDO EM MOBILE */
+  .orb-clinical {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: floatOrb 25s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  @media (max-width: 768px) {
+    .orb-clinical {
+      animation: none;
+      opacity: 0.25;
+    }
+  }
+
+  @keyframes floatOrb {
+
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+      transform: translate(40px, -30px) scale(1.1);
+    }
+
+    66% {
+      transform: translate(-20px, 20px) scale(0.95);
+    }
+  }
+
+  /* Data Grid Animation - SIMPLIFICADO EM MOBILE */
+  .data-grid {
+    background-image:
+      linear-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: dataGridPulse 8s ease-in-out infinite;
+  }
+
+  @media (max-width: 768px) {
+    .data-grid {
+      animation: none;
+      opacity: 0.2;
+    }
+  }
+
+  @keyframes dataGridPulse {
+
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+
+    50% {
+      opacity: 0.6;
+    }
+  }
+}
+
+@layer utilities {
+
+  /* Clinical Typography */
+  .text-display-xl {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-weight: 600;
+  }
+
+  .text-display-lg {
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+  }
+
+  .text-display {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .text-title {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .text-body-xl {
+    font-size: clamp(1rem, 1.8vw, 1.375rem);
+    line-height: 1.6;
+  }
+
+  /* Gradient Text */
+  .text-gradient-clinical {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(160 60% 55%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow Effects */
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-primary-strong {
+    box-shadow: var(--shadow-glow-strong);
+  }
+
+  /* Border Glow */
+  .border-glow {
+    border: 1px solid hsl(var(--primary) / 0.3);
+    box-shadow: inset 0 0 20px hsl(var(--primary) / 0.05), 0 0 20px hsl(var(--primary) / 0.1);
+  }
+
+  /* Tag contraste melhorado para seções escuras */
+  .tag-dark {
+    @apply bg-primary/20 border border-primary/40 text-primary;
+  }
+
+  /* Tag contraste melhorado para seções claras */
+  .tag-light {
+    @apply bg-primary/15 border border-primary/30 text-primary;
+  }
+}
