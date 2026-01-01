@@ -1,6 +1,7 @@
 import logoPlena from '@/assets/logo-plena-saude.png';
 import logoKDigital from '@/assets/logo-k-digital.png';
 import { content } from '@/content';
+import { Link } from 'react-router-dom';
 
 export function Footer() {
   return (
@@ -17,13 +18,13 @@ export function Footer() {
 
           {/* Logo & Identity - Enhanced */}
           <div className="flex flex-col gap-6 max-w-sm">
-            <a href="#" className="flex items-center gap-2 group opacity-90 hover:opacity-100 transition-opacity">
+            <Link to="/" className="flex items-center gap-2 group opacity-90 hover:opacity-100 transition-opacity">
               <img
                 src={logoPlena}
                 alt="Plena Saúde"
                 className="h-12 w-auto brightness-0 invert"
               />
-            </a>
+            </Link>
 
             <p className="text-sm text-white/50 leading-relaxed font-light">
               {content.footer.presentation}
@@ -68,9 +69,9 @@ export function Footer() {
           </div>
           <div className="flex gap-8">
             {content.footer.legal.map((item) => (
-              <a key={item.label} href={item.href} className="font-mono text-[10px] text-white/20 hover:text-white transition-colors uppercase tracking-widest">
+              <Link key={item.label} to={item.href} className="font-mono text-[10px] text-white/20 hover:text-white transition-colors uppercase tracking-widest">
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

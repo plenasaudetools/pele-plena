@@ -55,7 +55,7 @@ export function HeroSection() {
       </div>
 
       {/* 3. TYPOGRAPHY 'IN THE SCENE' (Integrated with Scroll) */}
-      <div className="relative z-20 h-full container-clinical flex flex-col justify-center">
+      <div className="relative z-20 h-full container-clinical flex flex-col justify-start md:justify-center pt-32 md:pt-0">
 
         <motion.div
           className="max-w-4xl space-y-8 mt-10"
@@ -109,7 +109,7 @@ export function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5, delay: 1.8 }}
-        className="absolute bottom-12 left-0 w-full z-30 container-clinical"
+        className="relative mt-12 md:absolute md:mt-0 md:bottom-12 left-0 w-full z-30 container-clinical"
       >
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 border-t border-white/5 pt-8">
 

@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import PoliticaDePrivacidade from "./pages/PoliticaDePrivacidade";
 import TermosDeUso from "./pages/TermosDeUso";
 import { SplashScreen } from "./components/SplashScreen";
+import ScrollToTop from "./components/ScrollToTop";
 import { Footer } from "./components/layout/Footer";
 import { CookieConsent } from "./components/CookieConsent";
 
@@ -32,6 +33,7 @@ const App = () => {
         <Sonner />
         <SplashScreen isVisible={isLoading} />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/politica-de-privacidade" element={<PoliticaDePrivacidade />} />
