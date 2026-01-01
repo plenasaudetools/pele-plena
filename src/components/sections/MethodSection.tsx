@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { content } from '@/content';
 import { ScrollParallax } from '@/components/ui/ScrollParallax';
-import { X } from 'lucide-react';
+import { X, ScanSearch } from 'lucide-react';
 
 import resAcne from '@/assets/result-acne.png';
 import resReju from '@/assets/result-rejuvenation.png';
@@ -126,44 +126,64 @@ export function MethodSection() {
                     </h3>
                 </div>
 
-                {/* Infinite Marquee */}
-                <div className="relative w-full overflow-hidden flex select-none mask-linear-fade">
-                    <motion.div
-                        className="flex gap-4 min-w-full"
-                        animate={{ x: ["0%", "-50%"] }}
-                        transition={{
-                            repeat: Infinity,
-                            ease: "linear",
-                            duration: 40
-                        }}
-                    >
-                        {/* Render simple triple loop for safety coverage */}
-                        {[...RESULTS_DATA, ...RESULTS_DATA, ...RESULTS_DATA].map((item, i) => (
-                            <div
-                                key={i}
-                                onClick={() => setSelectedImage(item)}
-                                className="relative shrink-0 w-[280px] h-[380px] bg-white/5 border border-white/10 p-2 cursor-pointer group hover:border-clinical-accent/50 transition-colors"
-                            >
-                                <div className="w-full h-full overflow-hidden relative grayscale group-hover:grayscale-0 transition-all duration-500">
-                                    <img
-                                        src={item.img}
-                                        alt={item.label}
-                                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                    />
+                {/* Infinite Marquee + Drag/Swipe Zone */}
+                <div className="relative w-full overflow-hidden select-none mask-linear-fade">
 
-                                    {/* Tech Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                                        <span className="font-mono text-[10px] text-clinical-accent mb-1">{item.id}</span>
-                                        <span className="font-sans text-sm text-white font-medium">{item.label}</span>
+                    {/* Draggable Container for Mobile UX */}
+                    <div className="overflow-x-auto no-scrollbar flex md:block snap-x snap-mandatory md:snap-none">
+                        <motion.div
+                            className="flex gap-4 min-w-full w-max md:w-auto px-6 md:px-0"
+                            animate={{ x: ["0%", "-50%"] }}
+                            transition={{
+                                repeat: Infinity,
+                                ease: "linear",
+                                duration: 25 // Faster on default, mobile override below if needed via CSS or hook
+                            }}
+                            // Pause animation on hover or touch
+                            whileHover={{ animationPlayState: "paused" }}
+                            whileTap={{ animationPlayState: "paused" }}
+                        >
+                            {/* Loop logic remains, updated card internals */}
+                            {[...RESULTS_DATA, ...RESULTS_DATA, ...RESULTS_DATA].map((item, i) => (
+                                <div
+                                    key={i}
+                                    onClick={() => setSelectedImage(item)}
+                                    className="relative shrink-0 w-[280px] h-[380px] bg-white/5 border border-white/10 p-2 cursor-pointer group hover:border-clinical-accent/50 transition-colors snap-center"
+                                >
+                                    <div className="w-full h-full overflow-hidden relative grayscale group-hover:grayscale-0 transition-all duration-500">
+                                        <img
+                                            src={item.img}
+                                            alt={item.label}
+                                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                        />
+
+                                        {/* Tech Overlay with explicit 'View' hint */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
+
+                                            <div className="flex justify-between items-end">
+                                                <div>
+                                                    <span className="font-mono text-[10px] text-clinical-accent mb-1 block">{item.id}</span>
+                                                    <span className="font-sans text-sm text-white font-medium block">{item.label}</span>
+                                                </div>
+                                                <div className="p-2 bg-white/10 rounded-full backdrop-blur-sm border border-white/10 group-active:scale-95 transition-transform">
+                                                    <ScanSearch size={16} className="text-white/80" />
+                                                </div>
+                                            </div>
+
+                                            {/* Micro-hint text */}
+                                            <span className="font-mono text-[9px] text-white/40 uppercase tracking-widest mt-2 block border-t border-white/10 pt-2">
+                                                Ver Detalhes
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </motion.div>
+                            ))}
+                        </motion.div>
+                    </div>
 
-                    {/* Gradient Masks for edges */}
-                    <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#080808] to-transparent z-10 pointer-events-none" />
-                    <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#080808] to-transparent z-10 pointer-events-none" />
+                    {/* Gradient Masks for edges - Desktop Only to not block scroll */}
+                    <div className="hidden md:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#080808] to-transparent z-10 pointer-events-none" />
+                    <div className="hidden md:block absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#080808] to-transparent z-10 pointer-events-none" />
                 </div>
             </div>
 
