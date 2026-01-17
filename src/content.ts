@@ -1,168 +1,168 @@
 export const content = {
     header: {
         menu: [
-            { label: 'Protocolo', href: '#metodo' },
-            { label: 'Processo', href: '#como-funciona' },
-            { label: 'Resultados', href: '#provas' },
+            { label: 'O Método', href: '#metodo' },
+            { label: 'Como Funciona', href: '#como-funciona' },
+            { label: 'Depoimentos', href: '#provas' },
         ],
-        ctaButton: 'Reservar',
-        whatsappLink: "https://wa.me/5513988595323?text=Oi!%20Eu%20quero%20agendar%20a%20Avalia%C3%A7%C3%A3o%20do%20M%C3%A9todo%20MAPA%20da%20Sa%C3%BAde.",
+        ctaButton: 'Agendar Conversa',
+        whatsappLink: "https://wa.me/5513988595323?text=Oi!%20Gostaria%20de%20saber%20mais%20sobre%20o%20tratamento%20para%20pele%20madura.",
     },
     hero: {
         badge: {
-            left: 'Ciclo Facial Integrativo',
-            right: 'Plena Saúde'
+            left: 'Medicina Integrativa',
+            right: 'Pele Madura'
         },
         title: {
-            part1: 'Método,',
-            part2: 'não milagre.'
+            part1: 'Sua identidade,',
+            part2: 'revitalizada.'
         },
-        description: 'Regeneração biológica conduzida. Do primeiro estímulo ao resultado sustentado.',
+        description: 'Protocolo de Gerenciamento do Envelhecimento. Recupere a firmeza e o viço natural através da saúde, sem perder seus traços.',
         cta: {
-            label: 'Início do Ciclo',
-            text: 'Conhecer o Ciclo',
+            label: 'Atendimento via WhatsApp',
+            text: 'Agendar Avaliação',
         },
         status: {
-            contact: 'Contato com equipe',
-            availability: 'Agenda limitada'
+            contact: 'Atendimento Individualizado',
+            availability: 'Poucas vagas mensais'
         }
     },
     pain: {
-        step: 'Etapa 01: O Filtro',
+        step: 'Etapa 01: O Entendimento',
         title: {
-            main: 'Nada começa na pele',
-            highlight: 'sem entender o corpo.'
+            main: 'O corpo muda. O cuidado',
+            highlight: 'precisa acompanhar.'
         },
-        description: 'A biorressonância não é apenas um exame. É o mapa que nos diz onde há inflamação, carência ou excesso. Sem ela, qualquer tratamento estético é um tiro no escuro.',
-        listTitle: 'O que acontece nesta fase:',
+        description: 'Após os 40, a renovação celular diminui naturalmente. Tratamentos superficiais não resolvem porque a causa é interna. Mapeamos sua saúde para reativar seu colágeno real.',
+        listTitle: 'Por que o creme não funciona mais?',
         points: [
-            'Detectar cargas inflamatórias;',
-            'Mapear deficiências de nutrientes;',
-            'Preparar o terreno biológico.'
+            'O metabolismo desacelerou;',
+            'Faltam nutrientes para produzir colágeno;',
+            'A inflamação silenciosa destrói as células.'
         ],
         steps: [
             { id: '01', label: 'Anamnese', value: 'Investigativa' },
             { id: '02', label: 'Biorressonância', value: 'Rastreio' },
-            { id: '03', label: 'Inflamação', value: 'Detecção' },
+            { id: '03', label: 'Inflamação', value: 'Correção' },
             { id: '04', label: 'Plano', value: 'Personalizado' },
         ],
-        phaseStatus: 'Fase: Mapeamento Completo'
+        phaseStatus: 'Fase: Diagnóstico Biológico'
     },
     method: {
-        step: 'Etapa 02: O Método',
-        title: 'Arquitetura do Tratamento.',
-        description: 'Estimular a pele uma vez não muda comportamento celular. Repetição inteligente, sim.',
-        highlight: 'Técnica sem constância é desperdício.',
+        step: 'Etapa 02: A Estratégia',
+        title: 'Devolvendo Estrutura e Densidade.',
+        description: 'Pele madura precisa de estratégia. Unimos tecnologia e nutrição para devolver a estrutura que o tempo levou, com resultados elegantes e naturais.',
+        highlight: 'Beleza é saúde visível.',
         timeline: [
             {
                 phase: "01",
-                title: "Preparação da Base",
+                title: "Limpeza e Preparo",
                 tech_specs: ["Limpeza Profunda", "Desobstrução", "Receptividade"],
-                desc: "Resultados sustentados exigem base limpa. Removemos barreiras para que o estímulo chegue onde precisa."
+                desc: "Preparamos o terreno. Sua pele precisa estar limpa e desinflamada para receber os estímulos corretamente."
             },
             {
                 phase: "02",
-                title: "Estímulo Biológico",
-                tech_specs: ["Laser 660nm", "LED Verde/Âmbar", "PRP Autólogo"],
-                desc: "Fotobiomodulação e Fatores de Crescimento. Ensinamos a célula a trabalhar novamente, ativando colágeno real."
+                title: "Reativação do Colágeno",
+                tech_specs: ["Laser Terapêutico", "LED", "PRP Autólogo"],
+                desc: "Usamos a própria biologia do seu corpo (PRP) e luzes terapêuticas para acordar as células que produzem firmeza."
             },
             {
                 phase: "03",
-                title: "Sustentação",
+                title: "Firmeza Duradoura",
                 tech_specs: ["Cronograma", "Cuidados Diários", "Nutrição"],
-                desc: "O que acontece entre as sessões decide o resultado. Manutenção assistida."
+                desc: "Manutenção assistida. Ensinamos você a manter os resultados com a rotina certa em casa."
             }
         ]
     },
     howItWorks: {
         step: 'Etapa 03: A Jornada',
-        title: 'Cronograma de 11 Sessões.',
+        title: 'Seu Cronograma de Cuidado.',
         meta: {
             duration: 'Duração: 3 Meses',
             frequency: 'Frequência: Semanal/Quinzenal'
         },
         schedule: [
             { sess: "01", proc: "Limpeza Profunda", detail: "Preparação da Base" },
-            { sess: "02", proc: "Fotobio + PRP (1)", detail: "Ativação Celular" },
-            { sess: "03", proc: "Fotobiomodulação", detail: "Estímulo Contínuo" },
-            { sess: "04", proc: "Fotobio + PRP (2)", detail: "Regeneração" },
-            { sess: "05", proc: "Fotobiomodulação", detail: "Manutenção Energética" },
-            { sess: "06", proc: "Fotobio + PRP (3)", detail: "Reforço de Colágeno" },
-            { sess: "07", proc: "Fotobiomodulação", detail: "Sustentação" },
-            { sess: "08", proc: "Fotobio + PRP (4)", detail: "Densidade Dérmica" },
-            { sess: "09", proc: "Fotobiomodulação", detail: "Revitalização" },
-            { sess: "10", proc: "Fotobio + PRP (5)", detail: "Maturação" },
-            { sess: "11", proc: "Limpeza de Encerramento", detail: "Finalização do Ciclo" },
+            { sess: "02", proc: "Fotobio + PRP (1)", detail: "Início da Ativação" },
+            { sess: "03", proc: "Fotobiomodulação", detail: "Estímulo Suave" },
+            { sess: "04", proc: "Fotobio + PRP (2)", detail: "Reforço Celular" },
+            { sess: "05", proc: "Fotobiomodulação", detail: "Revitalização" },
+            { sess: "06", proc: "Fotobio + PRP (3)", detail: "Ganho de Densidade" },
+            { sess: "07", proc: "Fotobiomodulação", detail: "Manutenção do Viço" },
+            { sess: "08", proc: "Fotobio + PRP (4)", detail: "Firmeza Profunda" },
+            { sess: "09", proc: "Fotobiomodulação", detail: "Hidratação Profunda" },
+            { sess: "10", proc: "Fotobio + PRP (5)", detail: "Consolidação" },
+            { sess: "11", proc: "Finalização", detail: "Pele Renovada" },
         ],
         summary: {
             time: '3 Meses',
-            label: 'Ciclo Completo'
+            label: 'Tratamento Completo'
         },
         footer: {
-            note: '*Protocolo Adaptável conforme resposta clínica',
-            tech: 'Sintergia :: Fotobio + PRP'
+            note: '*Protocolo personalizado para sua necessidade',
+            tech: 'Tecnologia + Biologia'
         }
     },
     professional: {
         profile: {
-            role: 'Especialista',
+            role: 'Especialista em Longevidade',
             name: 'Dra. Vanderleia Prudêncio',
             location: 'Guarujá / SP',
-            image: '/dra-vanderleia.jpg' // Caminho da imagem na pasta public
+            image: '/dra-vanderleia.jpg'
         },
         content: {
-            title: 'Medicina que investiga a causa, não o sintoma.',
-            description: 'Combinando medicina integrativa, bioquímica e análise de estilo de vida para criar protocolos de saúde que realmente funcionam no longo prazo.',
+            title: 'Medicina que respeita sua história.',
+            description: 'Minha missão não é transformar você em outra pessoa, mas trazer à tona a sua melhor versão. Unindo medicina integrativa e estética para um envelhecimento com qualidade.',
             stats: [
-                { value: '10+', label: 'Anos de Prática' },
-                { value: '5k+', label: 'Casos Mapeados' },
-                { value: '360º', label: 'Visão Clínica' }
+                { value: '10+', label: 'Anos de Cuidado' },
+                { value: '5k+', label: 'Vidas Impactadas' },
+                { value: '360º', label: 'Olhar Integral' }
             ],
-            tags: ['Medicina Integrativa', 'Saúde da Mulher', 'Longevidade', 'Dermatologia Funcional']
+            tags: ['Gerenciamento do Envelhecimento', 'Saúde da Mulher', 'Estética Natural', 'Bem-estar']
         }
     },
     testimonials: {
         header: {
             tag: 'Histórias Reais',
-            title: 'Resultados Validados.'
+            title: 'Mulheres Reais, Resultados Reais.'
         },
         items: [
             {
-                quote: "Não é só sobre emagrecer ou 'ficar bonita'. É sobre acordar de manhã e sentir que meu corpo funciona. A estética veio como bônus.",
-                author: "Ana Clara, 34"
+                quote: "Tinha medo de ficar artificial, com aquela cara esticada. Amei porque recuperei o viço que tinha aos 30, mas continuo sendo eu mesma, só que mais descansada.",
+                author: "Ana Clara, 44"
             },
             {
-                quote: "Já tinha passado por 5 dermatologistas. Ninguém perguntou do meu intestino. Aqui foi a primeira pergunta. Isso mudou tudo.",
-                author: "Mariana S., 29"
+                quote: "Já tinha passado por 5 dermatologistas. Ninguém perguntou do meu intestino ou hormônios. Aqui foi a primeira pergunta. Isso mudou minha pele e minha disposição.",
+                author: "Mariana S., 52"
             },
             {
-                quote: "O nível de detalhe dos exames e a explicação... eu nunca vi isso. Você entende o que está tomando e porquê. É medicina de outro nível.",
-                author: "Roberta F., 41"
+                quote: "Não é sobre esconder a idade, é sobre estar bem nela. O protocolo me deu uma segurança e uma luminosidade que eu não sentia há anos.",
+                author: "Roberta F., 46"
             }
         ]
     },
     finalCTA: {
-        tag: 'Ciclo Facial',
+        tag: 'Ciclo de Cuidado',
         title: {
-            main: 'Inicie sua',
-            highlight: 'regeneração.'
+            main: 'Recupere sua',
+            highlight: 'autoestima.'
         },
-        description: 'Avaliação, preparo de terreno e tecnologia avançada. Um protocolo desenhado para resultados reais.',
+        description: 'Avaliação detalhada, preparo do organismo e tecnologia segura. Um protocolo desenhado para quem valoriza a saúde.',
         location: {
             city: 'Guarujá • SP',
             mode: 'Presencial'
         },
-        button: 'Agendar Agora',
-        whatsappLink: "https://wa.me/5513988595323?text=Oi!%20Gostaria%20de%20agendar%20a%20Avalia%C3%A7%C3%A3o%20para%20o%20Ciclo%20Facial."
+        button: 'Agendar Avaliação',
+        whatsappLink: "https://wa.me/5513988595323?text=Oi!%20Quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20ciclo%20de%20gerenciamento%20do%20envelhecimento."
     },
     footer: {
         logoText: {
             line1: 'Medicina Integrativa e Estética',
             line2: 'Guarujá / SP'
         },
-        presentation: 'Referência em regeneração dérmica e saúde integrativa. Unimos tecnologia avançada e olhar clínico para resultados definitivos.',
+        presentation: 'Referência em gerenciamento do envelhecimento saudável. Unimos tecnologia e cuidado humano para resultados que duram.',
         links: [
-            { label: 'Protocolo', href: '#metodo' },
+            { label: 'O Método', href: '#metodo' },
             { label: 'Processo', href: '#como-funciona' },
             { label: 'Resultados', href: '#provas' },
         ],
