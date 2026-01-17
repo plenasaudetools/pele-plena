@@ -41,7 +41,7 @@ const SystemAlert = ({ item, index }: { item: typeof content.pain.steps[0], inde
                             font-mono text-xs tracking-widest uppercase
                             ${isHovered ? 'text-emerald-500' : 'text-red-500/70'}
                         `}>
-                            {isHovered ? 'SYSTEM_STABLE' : `ERR_00${item.id}_DETECTED`}
+                            {isHovered ? 'Equilíbrio Restaurado' : `Fator 0${item.id}: Identificado`}
                         </span>
                         {!isHovered && (
                             <span className="flex h-2 w-2 relative">
@@ -105,7 +105,7 @@ export function PainSection() {
                                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-red-500/20 bg-red-500/5 backdrop-blur-sm mb-6">
                                     <Activity size={12} className="text-red-500 animate-pulse" />
                                     <span className="font-mono text-[10px] text-red-400 uppercase tracking-[0.2em]">
-                                        System Failure Analysis
+                                        Análise Clínica Integrativa
                                     </span>
                                 </div>
 
@@ -141,8 +141,8 @@ export function PainSection() {
                     {/* Right: The System Diagnostics */}
                     <div className="lg:col-span-6 space-y-4">
                         <div className="flex justify-between items-end mb-6 text-white/30 font-mono text-[10px] uppercase tracking-widest border-b border-white/10 pb-2">
-                            <span>Diagnostic Sequence</span>
-                            <span>ID: SYS-MAPA-01</span>
+                            <span>Mapa da Saúde</span>
+                            <span></span>
                         </div>
 
                         {content.pain.steps.map((item, i) => (

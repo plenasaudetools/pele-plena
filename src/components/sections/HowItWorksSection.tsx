@@ -51,7 +51,7 @@ export function HowItWorksSection() {
                   {item.proc}
                 </h3>
                 <p className="font-mono-tech text-[10px] text-white/40 uppercase tracking-wider">
-                     // {item.detail}
+                  {item.detail}
                 </p>
               </div>
             </div>
@@ -77,7 +77,7 @@ export function HowItWorksSection() {
 
             <div className="relative z-10 flex justify-between items-start">
               <span className="font-mono-tech text-[10px] text-white/40 uppercase tracking-widest group-hover:text-clinical-accent transition-colors">
-                // Disponibilidade Imediata
+                Disponibilidade Imediata
               </span>
               <ArrowUpRight className="w-5 h-5 text-white/30 group-hover:text-clinical-accent transition-colors duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </div>

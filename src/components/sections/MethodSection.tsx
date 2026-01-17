@@ -10,12 +10,12 @@ import resMelasma from '@/assets/result-melasma.png';
 import resScars from '@/assets/result-scars.png';
 
 const RESULTS_DATA = [
-    { id: 'CS-01', label: 'Protocolo Acne', img: resAcne },
-    { id: 'CS-02', label: 'Rejuvenescimento', img: resReju },
-    { id: 'CS-03', label: 'Melasma Control', img: resMelasma },
-    { id: 'CS-04', label: 'Cicatrizes', img: resScars },
-    { id: 'CS-05', label: 'Textura', img: resReju },
-    { id: 'CS-06', label: 'Luminosidade', img: resMelasma },
+    { id: 'Caso 01', label: 'Protocolo Acne', img: resAcne },
+    { id: 'Caso 02', label: 'Rejuvenescimento', img: resReju },
+    { id: 'Caso 03', label: 'Melasma Control', img: resMelasma },
+    { id: 'Caso 04', label: 'Cicatrizes', img: resScars },
+    { id: 'Caso 05', label: 'Textura', img: resReju },
+    { id: 'Caso 06', label: 'Luminosidade', img: resMelasma },
 ];
 
 export function MethodSection() {
@@ -119,7 +119,7 @@ export function MethodSection() {
             <div className="mt-40 relative border-t border-white/5 pt-12">
                 <div className="container-clinical mb-8">
                     <span className="font-mono-tech text-xs text-clinical-accent uppercase tracking-[0.2em] block mb-2">
-                        // Resultados Clínicos
+                        Resultados Clínicos
                     </span>
                     <h3 className="font-instrument text-3xl text-white">
                         Galeria de Evolução
