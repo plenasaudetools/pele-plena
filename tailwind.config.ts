@@ -60,6 +60,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
         display: ['Playfair Display', 'Georgia', 'serif'],
+        serif: ['Cormorant Garamond', 'serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       borderRadius: {

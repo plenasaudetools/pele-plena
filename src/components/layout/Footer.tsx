@@ -16,7 +16,7 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 mb-16">
 
-          {/* Logo & Identity - Enhanced */}
+          {/* Logo & Identity */}
           <div className="flex flex-col gap-6 max-w-sm">
             <Link to="/" className="flex items-center gap-2 group opacity-90 hover:opacity-100 transition-opacity">
               <img
@@ -35,14 +35,19 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Clean Menu - Refined Typography */}
+          {/* Menu */}
           <nav>
             <ul className="flex flex-wrap gap-10">
+              <li>
+                <Link to="/" className="font-display text-base text-white/40 hover:text-white transition-colors duration-300 tracking-wide">
+                  Home
+                </Link>
+              </li>
               {content.footer.links.map((item) => (
                 <li key={item.label}>
-                  <a href={item.href} className="font-display text-base text-white/40 hover:text-white transition-colors duration-300 tracking-wide">
+                  <Link to={item.href} className="font-display text-base text-white/40 hover:text-white transition-colors duration-300 tracking-wide">
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li>
@@ -55,7 +60,7 @@ export function Footer() {
 
         </div>
 
-        {/* Minimal Bottom Bar - Corrected Links */}
+        {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex flex-col md:flex-row items-center gap-6">
             <p className="font-mono text-[10px] text-white/20 uppercase tracking-widest">
